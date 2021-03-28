@@ -22,6 +22,7 @@ export default defineConfig({
     },
   ],
   fastRefresh: {},
+  hash: true,
   outputPath: 'docs',
   history: { type: 'hash' },
   publicPath: 'conflux-frontend-demo/'
