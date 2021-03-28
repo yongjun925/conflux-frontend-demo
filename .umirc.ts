@@ -25,5 +25,5 @@ export default defineConfig({
   hash: true,
   outputPath: 'docs',
   history: { type: 'hash' },
-  publicPath: 'conflux-frontend-demo/'
+  publicPath: '/'
 });
