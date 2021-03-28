@@ -22,4 +22,6 @@ export default defineConfig({
     },
   ],
   fastRefresh: {},
+  outputPath: 'docs',
+  history: { type: 'hash' }
 });
