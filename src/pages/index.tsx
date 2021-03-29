@@ -22,6 +22,16 @@ enum Status {
   PORTAL_STATE_CONNECTED
 }
 
+function openUrl(id: string, url: string) {
+  var a = document.createElement('a');
+  a.setAttribute('href', url)
+  a.setAttribute('target', '_blank')
+  a.setAttribute('id', id)
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
 export default function IndexPage() {
   const [account, setAccount] = useState('');
   const [status, setStatus] = useState(1);
@@ -38,6 +48,7 @@ export default function IndexPage() {
   }, []);
 
   const connectConfluxPortal = async () => {
+    if (!confluxPortal.conflux) return
     setStatus(Status.PORTAL_STATE_CONNECTING)
     await confluxPortal.enable()
     const account = confluxPortal.getAccount()
@@ -58,6 +69,7 @@ export default function IndexPage() {
   }
 
   const navClickHandler = () => {
+    if (!confluxPortal.conflux) return openUrl('appurl', confluxPortal.getInstallUrl())
     if (!account) connectConfluxPortal()
   }
 

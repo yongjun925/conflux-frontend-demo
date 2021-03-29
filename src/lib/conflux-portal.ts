@@ -2,13 +2,14 @@ class ConfluxPortal {
   accounts: any
   conflux: any
   constructor(conflux: any) {
-    if (typeof conflux === 'undefined') {
-      throw new Error('No Conflux detected')
-    }
-    if (!conflux.isConfluxPortal) {
+    if (conflux && !conflux.isConfluxPortal) {
       console.debug('Unknown Conflux.')
     }
     this.conflux = conflux
+  }
+
+  getInstallUrl() {
+    return 'https://portal.conflux-chain.org/'
   }
 
   async enable() {
