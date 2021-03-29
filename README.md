@@ -22,3 +22,5 @@ $ yarn start
 
 ## 示例地址
 [https://yongjun925.github.io/conflux-frontend-demo/](https://yongjun925.github.io/conflux-frontend-demo/)
+
+* 使用测试网络通过，正式网络使用最新的SDK会报地址验证失败问题，待解决
